@@ -20,26 +20,28 @@ function ToddList({ contents, setContents, isActive }) {
   };
 
   return (
-    <>
+    <section className="contents">
       <h2>{isActive ? "Working" : "Done"}</h2>
-      <ul>
+      <ul className="todolist">
         {contents.map((i) => {
           if (i.isDone === isActive) {
             return false;
           }
           return (
-            <li key={i.id}>
+            <li className="todo" key={i.id}>
               <p>{i.title}</p>
               <p>{i.content}</p>
-              <button onClick={() => onDeleteBtn(i.id)}>삭제하기</button>
-              <button onClick={() => onToggleBtn(i.id)}>
-                {i.isDone ? "취소" : "완료"}
-              </button>
+              <p>
+                <button onClick={() => onDeleteBtn(i.id)}>삭제하기</button>
+                <button onClick={() => onToggleBtn(i.id)}>
+                  {i.isDone ? "취소" : "완료"}
+                </button>
+              </p>
             </li>
           );
         })}
       </ul>
-    </>
+    </section>
   );
 }
 

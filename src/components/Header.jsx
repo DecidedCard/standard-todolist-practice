@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <header>
+    <header className="title">
       <h1>My Todo List</h1>
     </header>
   );

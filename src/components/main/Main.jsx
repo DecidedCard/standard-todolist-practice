@@ -6,21 +6,15 @@ function Main() {
   const [contents, setContents] = useState([]);
   return (
     <>
-      <section>
+      <section className="content-add">
         <InputForm setContents={setContents} />
       </section>
-      <section>
-        <TodoList
-          contents={contents}
-          setContents={setContents}
-          isActive={true}
-        />
-        <TodoList
-          contents={contents}
-          setContents={setContents}
-          isActive={false}
-        />
-      </section>
+      <TodoList contents={contents} setContents={setContents} isActive={true} />
+      <TodoList
+        contents={contents}
+        setContents={setContents}
+        isActive={false}
+      />
     </>
   );
 }
