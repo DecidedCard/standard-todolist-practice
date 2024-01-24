@@ -10,8 +10,8 @@ function InputForm({ setContents }) {
       isDone: false,
     };
 
-    e.reset();
     setContents((prev) => [content, ...prev]);
+    e.target.reset();
   };
   return (
     <form onSubmit={onSubnitHandler}>
