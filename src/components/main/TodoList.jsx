@@ -13,10 +13,12 @@ function ToddList({ contents, setContents, isActive }) {
   };
 
   const onDeleteBtn = (id) => {
-    const check = contents.filter((todo) => {
-      return todo.id !== id;
-    });
-    setContents(check);
+    if (window.confirm("삭제하시겠습니까?")) {
+      const newContents = contents.filter((todo) => {
+        return todo.id !== id;
+      });
+      setContents(newContents);
+    }
   };
 
   return (
